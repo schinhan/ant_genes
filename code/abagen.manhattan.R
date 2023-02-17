@@ -13,8 +13,7 @@ if (length(args) != 7) {
 # get arguments from command line
 abagenFile = args[1] # abagenFile='results/perm.pvals.txt'
 refseqFile = args[2] # refseqFile = "/Users/philippe/Desktop/projects/coco_genes/data/refseq/GRCh37_latest_genomic.edit.gff.gz"
-targetDir = args[3] # targetDir='results/manhattan'
-# annotationThresh = args[4] # annotationThresh = 'bonferroni' # 'fdr'
+targetDir = args[3] # targetDir='results/manhattan' # annotationThresh = args[4] # annotationThresh = 'bonferroni' # 'fdr'
 yend = as.numeric(args[4]) # yend = 10
 ysteps = as.numeric(args[5]) # ysteps = 2
 width = as.numeric(args[6]) # width = 11
