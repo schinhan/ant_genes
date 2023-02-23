@@ -1,0 +1,48 @@
+#############################
+#### GO Figure EXECUTION ####
+#############################
+
+#open linux terminal and navigate to folder
+cd ANTgenes/data_visualisation
+
+#install git package
+git clone https://gitlab.com/evogenlab/GO-Figure.git
+
+#check python version (python 3 is required)
+python --version
+
+#install required packages
+pip install numpy 
+pip install matplotlib
+pip install seaborn
+pip install scikit-learn
+pip install adjustText
+
+#make sure you have added the following files to your folder (available via https://gitlab.com/evogenlab/GO-Figure)
+# GO_exploratory.py 
+# gofigure.py 
+# ic.tsv 
+# relations.tsv 
+# relations_full.tsv 
+# checkParent.py 
+# go.obo 
+
+#make sure you have added the input files to your folder 
+# alert.gofigure.input.txt 
+# control.gofigure.input.txt 
+# orient.gofigure.input.txt 
+
+## run programm for all ANT conditions
+#alerting with max. 20 clusters displayed, si = 0.5
+python gofigure.py -i alert.gofigure.input.txt -o alerting_results -a 20 -si 0.5  -c 'log10-pval' -e 100 -p Blues_r  -k 'xx-large' -t "Alerting" 
+
+#control
+python gofigure.py -i control.gofigure.input.txt -o control_results -a 20 -si 0.5  -c 'log10-pval' -e 100 -p Blues_r -k 'xx-large' -t "Control"
+
+#orienting  
+python gofigure.py -i orient.gofigure.input.txt -o orienting_results -a 20 -si 0.5  -c 'log10-pval' -e 100 -p Blues_r -k 'xx-large' -t "Orienting"
+
+## data will be stored in:
+# molecular_function_alerting_results.tsv
+# molecular_function_control_results.tsv
+# molecular_function_orienting_results.tsv
