@@ -1,0 +1,67 @@
+GO molecular function complete	number	overUnder	pvalue	fdr
+structural constituent of ribosome (GO:0003735)	160	-	3.40E-13	1.58E-09
+DNA binding (GO:0003677)	1974	+	3.18E-11	7.40E-08
+sequence-specific DNA binding (GO:0043565)	1313	+	3.32E-10	5.15E-07
+sequence-specific double-stranded DNA binding (GO:1990837)	1221	+	7.95E-10	9.24E-07
+double-stranded DNA binding (GO:0003690)	1300	+	1.26E-09	1.17E-06
+transcription cis-regulatory region binding (GO:0000976)	1177	+	2.53E-09	1.96E-06
+transcription regulatory region nucleic acid binding (GO:0001067)	1179	+	3.00E-09	1.99E-06
+transcription regulator activity (GO:0140110)	1541	+	3.71E-09	2.16E-06
+signaling receptor binding (GO:0005102)	1070	-	5.37E-09	2.77E-06
+nucleic acid binding (GO:0003676)	3314	+	8.69E-09	4.04E-06
+RNA polymerase II transcription regulatory region sequence-specific DNA binding (GO:0000977)	1087	+	9.96E-09	4.21E-06
+DNA-binding transcription factor activity (GO:0003700)	1078	+	1.34E-08	5.18E-06
+DNA-binding transcription factor activity, RNA polymerase II-specific (GO:0000981)	1038	+	1.53E-08	5.46E-06
+protein serine kinase activity (GO:0106310)	313	+	1.02E-07	3.37E-05
+cis-regulatory region sequence-specific DNA binding (GO:0000987)	950	+	2.01E-07	6.21E-05
+G protein-coupled receptor binding (GO:0001664)	207	-	2.24E-07	6.50E-05
+heterocyclic compound binding (GO:1901363)	4920	+	4.13E-07	1.13E-04
+ATP binding (GO:0005524)	1256	+	4.67E-07	1.21E-04
+catalytic activity, acting on a protein (GO:0140096)	1884	+	5.57E-07	1.36E-04
+organic cyclic compound binding (GO:0097159)	4971	+	6.79E-07	1.58E-04
+RNA polymerase II cis-regulatory region sequence-specific DNA binding (GO:0000978)	932	+	7.12E-07	1.58E-04
+protein serine/threonine kinase activity (GO:0004674)	372	+	1.81E-06	3.82E-04
+structural molecule activity (GO:0005198)	554	-	3.53E-06	7.12E-04
+adenyl ribonucleotide binding (GO:0032559)	1310	+	4.62E-06	8.95E-04
+chromatin binding (GO:0003682)	495	+	7.88E-06	1.46E-03
+oxidoreductase activity (GO:0016491)	590	-	8.86E-06	1.58E-03
+adenyl nucleotide binding (GO:0030554)	1322	+	9.72E-06	1.67E-03
+microtubule binding (GO:0008017)	237	+	2.39E-05	3.96E-03
+phosphotransferase activity, alcohol group as acceptor (GO:0016773)	588	+	2.63E-05	4.22E-03
+antioxidant activity (GO:0016209)	66	-	3.72E-05	5.76E-03
+cell adhesion molecule binding (GO:0050839)	487	-	3.81E-05	5.70E-03
+transmembrane signaling receptor activity (GO:0004888)	644	-	4.54E-05	6.59E-03
+kinase activity (GO:0016301)	649	+	4.62E-05	6.51E-03
+receptor ligand activity (GO:0048018)	275	-	4.80E-05	6.56E-03
+transcription factor binding (GO:0008134)	545	+	5.05E-05	6.71E-03
+RNA polymerase II-specific DNA-binding transcription factor binding (GO:0061629)	315	+	6.99E-05	9.02E-03
+cytokine activity (GO:0005125)	107	-	7.08E-05	8.89E-03
+postsynaptic neurotransmitter receptor activity (GO:0098960)	55	-	8.35E-05	1.02E-02
+protein kinase activity (GO:0004672)	492	+	8.83E-05	1.05E-02
+signaling receptor regulator activity (GO:0030545)	302	-	8.85E-05	1.03E-02
+DNA-binding transcription repressor activity, RNA polymerase II-specific (GO:0001227)	262	+	9.16E-05	1.04E-02
+signaling receptor activator activity (GO:0030546)	281	-	9.40E-05	1.04E-02
+molecular transducer activity (GO:0060089)	793	-	9.53E-05	1.03E-02
+signaling receptor activity (GO:0038023)	793	-	9.53E-05	1.01E-02
+fatty acid binding (GO:0005504)	34	-	1.02E-04	1.05E-02
+catalytic activity, acting on a nucleic acid (GO:0140640)	524	+	1.09E-04	1.10E-02
+DNA-binding transcription repressor activity (GO:0001217)	266	+	1.57E-04	1.55E-02
+cadherin binding involved in cell-cell adhesion (GO:0098641)	16	-	1.60E-04	1.55E-02
+copper ion binding (GO:0005507)	43	-	1.77E-04	1.68E-02
+carboxylic acid binding (GO:0031406)	121	-	1.88E-04	1.75E-02
+histone binding (GO:0042393)	228	+	1.90E-04	1.73E-02
+integrin binding (GO:0005178)	128	-	2.05E-04	1.84E-02
+DNA-binding transcription factor binding (GO:0140297)	431	+	2.24E-04	1.97E-02
+purine ribonucleoside triphosphate binding (GO:0035639)	1546	+	2.70E-04	2.32E-02
+glycosaminoglycan binding (GO:0005539)	158	-	3.24E-04	2.74E-02
+oxidoreductase activity, acting on the CH-NH group of donors (GO:0016645)	25	-	3.72E-04	3.09E-02
+helicase activity (GO:0004386)	142	+	4.50E-04	3.67E-02
+metal ion transmembrane transporter activity (GO:0046873)	339	+	4.58E-04	3.67E-02
+calcium ion binding (GO:0005509)	530	-	4.97E-04	3.91E-02
+frizzled binding (GO:0005109)	30	-	4.98E-04	3.85E-02
+transferase activity, transferring phosphorus-containing groups (GO:0016772)	774	+	6.13E-04	4.67E-02
+peptidase regulator activity (GO:0061134)	141	-	6.18E-04	4.63E-02
+catalytic activity, acting on RNA (GO:0140098)	340	+	6.37E-04	4.70E-02
+ATP hydrolysis activity (GO:0016887)	296	+	6.70E-04	4.86E-02
+bitter taste receptor activity (GO:0033038)	11	+	6.71E-04	4.80E-02
+ribonucleotide binding (GO:0032553)	1615	+	6.92E-04	4.87E-02
