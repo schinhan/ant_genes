@@ -5,7 +5,7 @@
 # =============================================
 
 # set working directory
-cd /slow/projects/coco_genes
+cd /.../02_data/03_fMRI
 
 # settings
 nworkers=50
@@ -22,11 +22,11 @@ for cond in alert orient control; do
 		NR==FNR { corr[NR-1]=abs($2); sum[NR-1]=0; geneCount++; next }
 		{for (i=1;i<=NF;i++) { if(abs($i)>=corr[i]) { sum[i]++}}}
 		END {for (i=1;i<=geneCount;i++) printf "%d%s", sum[i], (i==geneCount?"\n":" ")}
-		' results/${cond}.obs.corr.txt results/${cond}/exp.corr.$(printf '%04d' $i).txt > results/${cond}/sum.twotailed.$(printf '%04d' $i).txt
+		' ${cond}.obs.corr.txt results/${cond}/exp.corr.$(printf '%04d' $i).txt > ${cond}/sum.twotailed.$(printf '%04d' $i).txt
 	) &
 	done
 	wait
 )
-cat results/${cond}/sum.twotailed*.txt | awk -vnpermutations="${npermutations}" 'NR==1 {geneCount=NF} {for (i=1;i<=NF;i++) {sum[i]+=$i}} END {for (i=1;i<=geneCount;i++) printf "%.6f%s", sum[i]/npermutations, (i==geneCount?"\n":" ")}' > results/${cond}.pval.twotailed.txt
+cat ${cond}/sum.twotailed*.txt | awk -vnpermutations="${npermutations}" 'NR==1 {geneCount=NF} {for (i=1;i<=NF;i++) {sum[i]+=$i}} END {for (i=1;i<=geneCount;i++) printf "%.6f%s", sum[i]/npermutations, (i==geneCount?"\n":" ")}' > results/${cond}.pval.twotailed.txt
 chmod 770 results/${cond}.pval.twotailed.txt
 done
