@@ -4,20 +4,20 @@
 # ====================================================================
 
 # set working directory
-setwd('/slow/projects/coco_genes')
+setwd('/.../02_data/03_fMRI')
 
 # attach required packages to current R session
 for (pkg in c('doParallel','data.table','bigmemory')) { eval(bquote(suppressPackageStartupMessages(require(.(pkg))))) }
 
 # load observed correlations
-alert.cor = read.delim('results/alert.obs.corr.txt', sep = '\t', header = T)
-orient.cor = read.delim('results/orient.obs.corr.txt', sep = '\t', header = T)
-control.cor = read.delim('results/control.obs.corr.txt', sep = '\t', header = T)
+alert.cor = read.delim('alert.obs.corr.txt', sep = '\t', header = T)
+orient.cor = read.delim('orient.obs.corr.txt', sep = '\t', header = T)
+control.cor = read.delim('control.obs.corr.txt', sep = '\t', header = T)
 
 # load permutation-based p-valyes of observed correlations
-alert.p = as.vector(unlist(read.table('results/alert.pval.twotailed.txt')))
-orient.p = as.vector(unlist(read.table('results/orient.pval.twotailed.txt'))) 
-control.p = as.vector(unlist(read.table('results/control.pval.twotailed.txt')))
+alert.p = as.vector(unlist(read.table('alert.pval.twotailed.txt')))
+orient.p = as.vector(unlist(read.table('orient.pval.twotailed.txt'))) 
+control.p = as.vector(unlist(read.table('control.pval.twotailed.txt')))
 pvals = data.frame(gene = alert.corr$genes, alert.p = alert.p, control.p = control.p, orient.p = orient.p) 
 
 # merge with pvals
@@ -53,8 +53,8 @@ sapply(sapply(data.frame(df[,c('alert.p','control.p','orient.p')]),unique),lengt
 sapply(sapply(data.frame(df[,c('alert.t','control.t','orient.t')]),unique),length)
 
 # save results
-save(df, file = 'results/perm.results.RData')
-write.table(df, file = 'results/perm.results.txt', sep = '\t', quote = F, col.names = T, row.names = F)
+save(df, file = 'perm.results.RData')
+write.table(df, file = 'perm.results.txt', sep = '\t', quote = F, col.names = T, row.names = F)
 
 # save pvals
 pvals = df[,c('gene','alert.p','control.p','orient.p')]
