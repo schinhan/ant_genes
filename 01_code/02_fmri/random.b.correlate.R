@@ -4,16 +4,16 @@
 # ====================================================================================
 
 # set working directory
-setwd('/slow/projects/coco_genes')
+setwd('/.../02_data')
 
 # attach required packages
 for (pkg in c('doParallel','data.table','bigmemory')) { eval(bquote(suppressPackageStartupMessages(require(.(pkg))))) }
 
 # read data
-ant_data = read.csv(file = 'data/ANTgenes/abagen_permutation/ant_lausanne.csv') # use /home/schinhan instead of data
-genes_data = data.frame(fread('/home/schinhan/ANTgenes/abagen_permutation/lausanne_parc_atlas.csv', sep = ',')) # use /home/schinhan instead of data
+ant_data = read.csv(file = '/03_fMRI/ant_lausanne.csv') # use /home/schinhan instead of data
+genes_data = data.frame(fread('/02_parcellation/02_lausanne_parc_atlas.csv', sep = ',')) # use /home/schinhan instead of data
 genes_data = genes_data[,-1] # delete column 'label'
-perm_id_data = data.frame(fread('gzip -dc results/Lausanne_perm_ids.txt.gz'))
+perm_id_data = data.frame(fread('gzip -dc /02_parcellation/Lausanne_perm_ids.txt.gz'))
 
 # calculate observed correlations and save them
 for (cond in c('alert', 'orient', 'control')) {
@@ -49,7 +49,7 @@ geneLabels = names(genes_data)
 start_time = Sys.time()
 for (cond in c('alert', 'orient', 'control')) {
   message(paste0('Starting with ', cond, ' | n.permutations: ', n.permutations, ' | n.cores: ', n.cores, ' | iterations per worker: ', iterationsPerWorker)) 
-  system(paste0('rm -f results/',cond, '/*; mkdir -p ','results/',cond))
+  system(paste0('rm -f /03_fMRI/',cond, '/*; mkdir -p ','results/',cond))
   
   # start parallel loop
   x = foreach(i = 1:n.cores, .packages = c('bigmemory', 'data.table')) %dopar% { # .combine = 'rbind', 
@@ -71,7 +71,7 @@ for (cond in c('alert', 'orient', 'control')) {
       # k = k+1
       tmp[1,] = cor(ant_data[perms[,j],cond], genes[], use = 'pairwise.complete.obs') # tmp[k,] = cor(ant_data[perms[,j],cond], genes[], use = 'pairwise.complete.obs')
       if (j == j.start) { appendLogical = F } else { appendLogical = T }
-      data.table::fwrite(tmp, file = paste0('results/',cond,'/exp.corr.',sprintf("%04d", i),'.txt'), sep = '\t', quote = F, row.names = F, append = appendLogical)
+      data.table::fwrite(tmp, file = paste0('/03_fMRI/',cond,'/exp.corr.',sprintf("%04d", i),'.txt'), sep = '\t', quote = F, row.names = F, append = appendLogical)
     }   
   }
 }
