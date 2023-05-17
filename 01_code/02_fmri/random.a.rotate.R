@@ -4,17 +4,17 @@
 # ==============================================
 
 # set working directory
-setwd('/slow/projects/coco_genes')
+setwd('/.../02_data/02_parcellation')
 
 # attach required packages
 for (pkg in c('data.table','doRNG','foreach','matrixStats')) { eval(bquote(suppressPackageStartupMessages(require(.(pkg))))) }
 
 # source function rotate.parcellation
-source('code/functions/rotate.parcellation.R')
+source('/.../01_code/01_parcellation/rotate.parcellation.R')
 
 # load data
-coord.l = as.matrix(read.table('results/Lausanne_Centroids_left.csv', sep = ',', header = F))
-coord.r = as.matrix(read.table('results/Lausanne_Centroids_right.csv', sep = ',', header = F))
+coord.l = as.matrix(read.table('Lausanne_Centroids_left.csv', sep = ',', header = F))
+coord.r = as.matrix(read.table('Lausanne_Centroids_right.csv', sep = ',', header = F))
 
 # set up parallel pool
 n.cores = 50 # parallel::detectCores() - 1
