@@ -12,9 +12,9 @@ if (length(args)!=6) {
 
 # set arguments
 traits = args[1] # traits="gap_gm,gap_wm,gap_gwm"
-manhattanPlots = args[2] # manhattanPlots="results/gap_gm/manhattan/manhattan.png,results/gap_wm/manhattan/manhattan.png,results/gap_gwm/manhattan/manhattan.png"
-qqPlots = args[3] # qqPlots="results/gap_gm/qqplot/qqplot.png,results/gap_wm/qqplot/qqplot.png,results/gap_gwm/qqplot/qqplot.png"
-outputFile = args[4] # outputFile="results/combined/qqplot.manhattan.png"
+manhattanPlots = args[2] # manhattanPlots="/.../03_data_visualization/01_fMRI/Manhattan_QQ_Plots/manhattan.png"
+qqPlots = args[3] # qqPlots="/.../03_data_visualization/01_fMRI/Manhattan_QQ_Plots/qqplot.png"
+outputFile = args[4] # outputFile="/.../03_data_visualization/01_fMRI/Manhattan_QQ_Plots/qqplot.manhattan.png"
 width = as.numeric(args[5]) # width = 12
 height = as.numeric(args[6]) # height = 14
 
