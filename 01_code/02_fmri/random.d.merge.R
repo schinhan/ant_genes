@@ -58,5 +58,5 @@ write.table(df, file = 'perm.results.txt', sep = '\t', quote = F, col.names = T,
 
 # save pvals
 pvals = df[,c('gene','alert.p','control.p','orient.p')]
-save(pvals, file = 'results/perm.pvals.RData')
-write.table(pvals, file = 'results/perm.pvals.txt', sep = '\t', quote = F, col.names = T, row.names = F)
+save(pvals, file = '04_perm.pvals.RData')
+write.table(pvals, file = '04_perm.pvals.txt', sep = '\t', quote = F, col.names = T, row.names = F)
