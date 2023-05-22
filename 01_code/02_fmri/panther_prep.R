@@ -18,9 +18,9 @@ ant_dat <- dat[,2:4]             #seperate for correlations
 genes_dat <- dat[,5:15636]
 
 #calculate descriptive statistics
-fdr.alert <- p.adjust(pvals$p.alert, method = "fdr", n = length(pvals$p.alert))
-fdr.control <- p.adjust(pvals$p.control, method = "fdr", n = length(pvals$p.control))
-fdr.orient <- p.adjust(pvals$p.orient, method = "fdr", n = length(pvals$p.orient))
+fdr.alert <- p.adjust(pvals$alert.p, method = "fdr", n = length(pvals$alert.p))
+fdr.control <- p.adjust(pvals$control.p, method = "fdr", n = length(pvals$control.p))
+fdr.orient <- p.adjust(pvals$orient.p, method = "fdr", n = length(pvals$orient.p))
 
 #calculate observed correlations
 alert.corr.obs <- cor (ant_dat[,1], genes_dat, method = "pearson") #calculate correlations 
@@ -34,9 +34,9 @@ control.corr.obs <- as.data.frame(t(control.corr.obs))
 colnames(control.corr.obs) <- "control.corr.obs"
 
 #calculate z-values
-alert.zval = qnorm(pvals$p.alert/2) * -sign(ant.genes.corr.obs$alert.corr.obs)
-orient.zval = qnorm(pvals$p.orient/2) * -sign(ant.genes.corr.obs$orient.corr.obs)
-control.zval = qnorm(pvals$p.control/2) * -sign(ant.genes.corr.obs$control.corr.obs)
+alert.zval = qnorm(pvals$alert.p/2) * -sign(ant.genes.corr.obs$alert.corr.obs)
+orient.zval = qnorm(pvals$orient.p/2) * -sign(ant.genes.corr.obs$orient.corr.obs)
+control.zval = qnorm(pvals$control.p/2) * -sign(ant.genes.corr.obs$control.corr.obs)
 
 #### arrange genes for panther ###
 library(dplyr)
